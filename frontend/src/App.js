@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker } from 'react-map-gl';
 
 function App() {
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8
+    latitude: 46,
+    longitude: 17,
+    zoom: 4
   });
   return (
     <div className="App">
@@ -15,7 +15,16 @@ function App() {
       {...viewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
       onViewportChange={nextViewport => setViewport(nextViewport)}
-    />
+    >
+      <Marker 
+        latitude={48.858093} 
+        longitude={2.294694} 
+        offsetLeft={-20} 
+        offsetTop={-10}
+      >
+        
+      </Marker>
+    </ReactMapGL>
     </div>
   );
 }
