@@ -28,7 +28,7 @@ export default function Login({ setShowLogin, setCurrentUsername,myStorage }) {
     <div className="loginContainer">
       <div className="logo">
         <Room className="logoIcon" />
-        <span>LamaPin</span>
+        <span>Mapsite</span>
       </div>
       <form onSubmit={handleSubmit}>
         <input autoFocus placeholder="username" ref={usernameRef} />
@@ -39,9 +39,9 @@ export default function Login({ setShowLogin, setCurrentUsername,myStorage }) {
           ref={passwordRef}
         />
         <button className="loginBtn" type="submit">
-          Login
+          로그인
         </button>
-        {error && <span className="failure">Something went wrong!</span>}
+        {error && <span className="failure">오류 발생</span>}
       </form>
       <Cancel className="loginCancel" onClick={() => setShowLogin(false)} />
     </div>

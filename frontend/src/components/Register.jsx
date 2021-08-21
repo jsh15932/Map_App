@@ -30,7 +30,7 @@ export default function Register({ setShowRegister }) {
     <div className="registerContainer">
       <div className="logo">
         <Room className="logoIcon" />
-        <span>LamaPin</span>
+        <span>Mapsite</span>
       </div>
       <form onSubmit={handleSubmit}>
         <input autoFocus placeholder="username" ref={usernameRef} />
@@ -42,12 +42,12 @@ export default function Register({ setShowRegister }) {
           ref={passwordRef}
         />
         <button className="registerBtn" type="submit">
-          Register
+          회원가입
         </button>
         {success && (
-          <span className="success">Successfull. You can login now!</span>
+          <span className="success">회원가입이 성공적으로 처리되었습니다.</span>
         )}
-        {error && <span className="failure">Something went wrong!</span>}
+        {error && <span className="failure">오류 발생</span>}
       </form>
       <Cancel
         className="registerCancel"

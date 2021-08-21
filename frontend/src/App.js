@@ -78,7 +78,7 @@ function App() {
     <div style={{ height: "100vh", width: "100%" }}>
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken=""
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
         width="100%"
         height="100%"
         transitionDuration="200"
@@ -115,17 +115,17 @@ function App() {
                 anchor="left"
               >
                 <div className="card">
-                  <label>Place</label>
+                  <label>장소</label>
                   <h4 className="place">{p.title}</h4>
-                  <label>Review</label>
+                  <label>리뷰</label>
                   <p className="desc">{p.desc}</p>
-                  <label>Rating</label>
+                  <label>별점</label>
                   <div className="stars">
                     {Array(p.rating).fill(<Star className="star" />)}
                   </div>
-                  <label>Information</label>
+                  <label>정보</label>
                   <span className="username">
-                    Created by <b>{p.username}</b>
+                    작성자 <b>{p.username}</b>
                   </span>
                   <span className="date">{format(p.createdAt)}</span>
                 </div>
@@ -159,18 +159,18 @@ function App() {
             >
               <div>
                 <form onSubmit={handleSubmit}>
-                  <label>Title</label>
+                  <label>제목</label>
                   <input
                     placeholder="Enter a title"
                     autoFocus
                     onChange={(e) => setTitle(e.target.value)}
                   />
-                  <label>Description</label>
+                  <label>설명</label>
                   <textarea
                     placeholder="Say us something about this place."
                     onChange={(e) => setDesc(e.target.value)}
                   />
-                  <label>Rating</label>
+                  <label>별점</label>
                   <select onChange={(e) => setStar(e.target.value)}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -179,7 +179,7 @@ function App() {
                     <option value="5">5</option>
                   </select>
                   <button type="submit" className="submitButton">
-                    Add Pin
+                    장소 추가
                   </button>
                 </form>
               </div>
@@ -188,18 +188,18 @@ function App() {
         )}
         {currentUsername ? (
           <button className="button logout" onClick={handleLogout}>
-            Log out
+            로그아웃
           </button>
         ) : (
           <div className="buttons">
             <button className="button login" onClick={() => setShowLogin(true)}>
-              Log in
+              로그인
             </button>
             <button
               className="button register"
               onClick={() => setShowRegister(true)}
             >
-              Register
+              회원가입
             </button>
           </div>
         )}
