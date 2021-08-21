@@ -7,6 +7,6 @@
 - MongoDB
 
 ## Scripts
-
-- `cd frontend && yarn start` 앱 실행 
-- `cd backend && yarn start` 서버 실행
+- `yarn install` 
+- `cd frontend && yarn start`
+- `cd backend && yarn start`
